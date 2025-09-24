@@ -1,5 +1,7 @@
 const API_KEY = "ab1fd813316146e5948af484db327312";
-const url = "https://newsapi.org/v2/everything?q=";
+//const url = "https://newsapi.org/v2/everything?q=";
+const url = "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://newsapi.org/v2/everything?q=");
+
 
 window.addEventListener("load", () => fetchNews("India"));
 
@@ -9,7 +11,9 @@ function reload() {
 
 async function fetchNews(query) {
   try {
+   // const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
     const res = await fetch(`${url}${query}&apiKey=${API_KEY}`);
+
     const data = await res.json();
     bindData(data.articles);
   } catch (error) {
@@ -70,6 +74,7 @@ searchButton.addEventListener("click", () => {
   curSelectedNav?.classList.remove("active");
   curSelectedNav = null;
 });
+
 
 
 

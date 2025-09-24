@@ -1,5 +1,5 @@
 const API_KEY = "ab1fd813316146e5948af484db327312";
-const url = "https://newsapi.org/v2/everything?q=";
+const url = "https://newsapi.org/v2/everything?q=tesla&from=2025-08-24&sortBy=publishedAt&apiKey=$";
 
 window.addEventListener("load", () => fetchNews("India"));
 
@@ -70,4 +70,5 @@ searchButton.addEventListener("click", () => {
   curSelectedNav?.classList.remove("active");
   curSelectedNav = null;
 });
+
 
